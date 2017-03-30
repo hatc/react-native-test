@@ -4,4 +4,4 @@
 2. `android/gradlew assembleRelease`
 ## how-to build jsbundle
 1. `yarn`
-2. `react-native bundle --platform ios --entry-file index.android.js --bundle-output <out>/index.android.bundle --assets-dest <out> --dev false`
+2. `react-native bundle --platform android --entry-file index.android.js --bundle-output <out>/index.android.bundle --assets-dest <out> --dev false`
