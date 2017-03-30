@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.basictest.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- bind android:enabled="{model.IsBusyBusy}" -->
+    <LinearLayout
+        android:id="@+id/searchBoxLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/reactViewPlaceholder"
+        android:orientation="vertical">
+        <include
+            layout="@layout/search_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/or_always"
+            android:gravity="center"/>
+        <!-- android:textAlignment="center" ignored coz com.android.support:appcompat-v7 version used by Android Studio
+        doesn't match appcompat-v7 version used in gradle.build?
+        or it's because View.textAlignment in appcompat-v7:23.0.1 ignored? -->
+        <Button
+            android:id="@+id/getHot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/get_hot"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/reactViewPlaceholder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/searchBoxLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- java.lang.NoSuchFieldError: TextAppearance_textAllCaps
+	at android.support.v7.widget.AppCompatTextHelper.loadFromAttributes
+	coz layout designer in Android Studio uses another version of com.android.support:appcompat-v7
+	not a 23.0.1 as react-native -->
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">basictest</string>
+    <string name="search_box_hint">Find a photo&#8230;</string>
+    <string name="or_always">or you can always</string>
+    <string name="get_hot">get hot</string>
+</resources>

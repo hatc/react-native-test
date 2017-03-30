@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="customThemeColorAccent">#64dd17</color>
+    <color name="customThemeColorForeground">#ffffff</color>
+    <color name="customThemeColorPrimary">#4caf50</color>
+    <color name="customThemeColorPrimaryDark">#1b5e20</color>
+</resources>
